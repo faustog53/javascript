@@ -1,0 +1,17 @@
+<script>
+   // (A) PASTE FROM CLIPBOARD
+   function jspaste () {
+     // (A1) READ TEXT FROM CLIPBOARD - PERMISSION REQUIRED
+     navigator.clipboard.readText()
+   
+     // (A2) PUT CLIPBOARD INTO TEXT FIELD
+     .then(txt => {
+       document.getElementById("test").value = txt;
+     })
+   }
+   </script>
+<h2>
+
+   <label>clipboard text:</label>
+   <input type="text" id="test" name="text" size="100">
+   <input type="button" value="Paste" onclick="jspaste()"/>

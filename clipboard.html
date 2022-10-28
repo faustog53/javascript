@@ -1,0 +1,21 @@
+<script>
+// (A) PASTE FROM CLIPBOARD
+function jspaste () {
+  // (A1) READ TEXT FROM CLIPBOARD - PERMISSION REQUIRED
+  navigator.clipboard.readText()
+
+  // (A2) PUT CLIPBOARD INTO TEXT FIELD
+  .then(txt => {
+    document.getElementById("demoE").value = txt;
+  })
+
+  // (A3) OPTIONAL - CANNOT ACCESS CLIPBOARD
+  .catch(err => {
+    alert("Please allow clipboard access permission");
+  });
+}
+</script>
+
+<!-- (B) HTML -->
+<input type="text" size="100" id="demoE"/>
+<input type="button" value="Paste" onclick="jspaste()"/>
